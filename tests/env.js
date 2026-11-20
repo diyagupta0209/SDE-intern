@@ -1,0 +1,11 @@
+process.env.NODE_ENV = 'test';
+process.env.MONGODB_URI = 'mongodb://127.0.0.1:27017/zorvyn-test';
+process.env.JWT_SECRET = 'test-jwt-secret-value';
+process.env.JWT_REFRESH_SECRET = 'test-refresh-secret-val';
+process.env.JWT_EXPIRES_IN = '15m';
+process.env.JWT_REFRESH_EXPIRES_IN = '7d';
+process.env.BCRYPT_ROUNDS = '4';
+process.env.LLM_API_KEY = '';
+process.env.LLM_BASE_URL = 'https://llm.example.test/v1';
+process.env.LLM_MODEL = 'test-model';
+process.env.CORS_ORIGIN = '*';
