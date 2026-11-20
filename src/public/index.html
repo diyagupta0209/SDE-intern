@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zorvyn FinTech API</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142033;
+      --muted: #526074;
+      --line: #d7deea;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ok: #0f7b4c;
+      --ok-bg: #e7f6ee;
+      --bad: #9f2d2d;
+      --bad-bg: #fdecec;
+      --accent: #1f4fd8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    h1 { margin: 0 0 8px; font-size: 32px; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    p { color: var(--muted); line-height: 1.5; }
+    .status {
+      display: inline-block;
+      margin: 16px 0 28px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--ok-bg);
+      color: var(--ok);
+      font-weight: 650;
+    }
+    .status.bad { background: var(--bad-bg); color: var(--bad); }
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    label { display: block; font-size: 14px; margin-bottom: 10px; }
+    input {
+      width: 100%;
+      margin-top: 4px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+    }
+    button {
+      margin-top: 6px;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f7f9fc;
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .full { grid-column: 1 / -1; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Zorvyn FinTech API</h1>
+    <p>The service is up. This page is the API root. JSON routes live under <code>/api/v1</code>.</p>
+    <div id="status" class="status">Checking the API…</div>
+    <div class="grid">
+      <section>
+        <h2>Sign in</h2>
+        <p>Demo user is filled in. Admin is <code>admin@zorvyn.local</code> / <code>ChangeMe123</code>.</p>
+        <form id="login">
+          <label>Email <input name="email" type="email" value="demo@zorvyn.local" autocomplete="username" required></label>
+          <label>Password <input name="password" type="password" value="Demopass1" autocomplete="current-password" required></label>
+          <button type="submit">Load my transactions</button>
+        </form>
+      </section>
+      <section>
+        <h2>Useful routes</h2>
+        <p><a href="/health">GET /health</a></p>
+        <p><code>POST /api/v1/auth/login</code></p>
+        <p><code>GET /api/v1/accounts</code></p>
+        <p><code>GET /api/v1/transactions</code></p>
+      </section>
+      <section class="full">
+        <h2>Result</h2>
+        <pre id="output">Sign in to load the demo account and categorized transactions.</pre>
+      </section>
+    </div>
+  </main>
+  <script src="/home.js"></script>
+</body>
+</html>

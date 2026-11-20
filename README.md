@@ -20,7 +20,7 @@ npm run seed -- --demo
 npm run dev
 ```
 
-The API listens on port 4000. `GET /health` returns the process and MongoDB status.
+The API listens on port 4000. Open http://127.0.0.1:4000/ for a status page, or `GET /health` for the JSON check.
 
 Demo seed login: `demo@zorvyn.local` / `Demopass1`. The admin user comes from `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD`.
 
