@@ -97,6 +97,14 @@ describe('Zorvyn API', { concurrency: 1 }, () => {
   }
 
   it('reports health and rejects unknown routes', async () => {
+    const home = await request(app).get('/');
+    assert.equal(home.status, 200);
+    assert.match(home.headers['content-type'], /html/);
+    assert.match(home.text, /Zorvyn FinTech API/);
+
+    const favicon = await request(app).get('/favicon.ico');
+    assert.equal(favicon.status, 204);
+
     const health = await request(app).get('/health');
     assert.equal(health.status, 200);
     assert.equal(health.body.data.mongo, 'connected');
